@@ -207,6 +207,8 @@
             System.Drawing.Image img = System.Drawing.Image.FromStream(remoteStream);
 
             // convert image data to byte array, base 64 encoded image
+            // use this img object if you wish to save the QR code to file
+            // else continue and store the image as base64 encoding
             img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
             bytes = ms.ToArray();
             base64encodedimg = Convert.ToBase64String(bytes);
